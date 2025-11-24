@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sapphire.net</title>
+  <meta name="description" content="sapphire.net سایتی برای دوست داران برنامه نویسی" />
+  <link rel="icon" type="image/png" href="123456789.png">
+
+  <!-- فونت‌ها -->
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'BZar';
+      src: url('https://cdn.fontcdn.ir/Font/Persian/BZar/BZar-Regular.woff2') format('woff2');
+    }
+
+    :root{--accent:#0ea5ff;--bg:#ffffff;--muted:#6b7280;--card:#f8fafc}
+    *{box-sizing:border-box}
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'BZar',sans-serif;
+      background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    h1,h2,h3,h4{font-family:'Lalezar',cursive;}
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1000px;margin:36px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#6c5ce7)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    nav a{margin:0 10px;color:var(--muted);font-weight:600;cursor:pointer}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 6px 24px rgba(2,6,23,0.06)}
+    h1{margin:0 0 12px 0;font-size:28px}
+    p.lead{margin:0 0 18px;color:var(--muted);line-height:1.6}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:10px 16px;border-radius:10px;font-weight:700}
+
+    /* تغییر فونت بخش ویژگی‌ها */
+    .features{display:flex;gap:12px;margin-top:16px}
+    .feat{
+      flex:1;
+      padding:12px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#fff,#f6fbff);
+      text-align:center;
+      font-family:'Lalezar',cursive; /* اینجا فونت تغییر کرد */
+    }
+    .feat h4{margin:6px 0}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #e6eef8;font-size:14px}
+    button.submit{padding:12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#6c5ce7);color:white;font-weight:700}
+
+    footer{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* بخش درباره من */
+    .about{margin-top:40px}
+    .about .box{
+      margin-top:20px;
+      background:rgba(255,255,255,0.8);
+      border:2px solid var(--accent);
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 6px 24px rgba(14,165,255,0.15);
+    }
+
+    /* Sapphire Club (کنار یا پایین) */
+    .sapphire{
+      margin-top:16px;
+      padding:14px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#f0f9ff,#ffffff);
+      border:1px solid rgba(14,165,255,0.12);
+    }
+    .sapphire h3{margin:0 0 8px;color:var(--accent)}
+    .sapphire ol{margin:0;padding-right:12px}
+
+    /* پیام موفقیت */
+    .notice{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);
+      background:#0ea5ff;color:#fff;padding:10px 20px;border-radius:8px;display:none;z-index:999}
+
+    /* واکنش‌گرا */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .logo{width:48px;height:48px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="123456789.png" alt="لوگو"></div>
+        <div>
+          <div style="font-weight:800">Sapphire</div>
+          <div style="font-size:12px;color:var(--muted)">sapphire.net</div>
+        </div>
+      </div>
+      <nav>
+        <a class="cta" href="javascript:void(0)" onclick="showNumber()">تماس با ما</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>خوش آمدید به Sapphire</h1>
+          <p class="lead">سلام به سایت من خوش اومدید من صفیرم علاقه مند به هک و امنیت و شبحچرخه سوار و علاقه مند به شطرنج.</p>
+          <a class="cta" href="#contact">تماس با ما</a>
+
+          <div class="features" id="features">
+            <div class="feat"><div style="font-size:20px;font-weight:700">سریع</div><h4>بهینه‌شده</h4></div>
+            <div class="feat"><div style="font-size:20px;font-weight:700">قابل توسعه</div><h4>HTML/CSS ساده</h4></div>
+            <div class="feat"><div style="font-size:20px;font-weight:700">واکنش‌گرا</div><h4>موبایل و دسکتاپ</h4></div>
+          </div>
+
+          <!-- Sapphire Club: نمایش خلاصه در صفحه اصلی -->
+          <div class="sapphire" id="sapphireClub">
+            <h3>Sapphire Club — نفرات برتر</h3>
+            <p style="color:var(--muted);margin:6px 0 8px 0">لیست نفرات برتر کلاب (قابل ویرایش):</p>
+            <ol id="sapphireList">
+              <li><strong>sapphire 599</strong></li>
+              <li><strong>حسین</strong></li>
+              <li><strong>آقای X</strong></li>
+            </ol>
+            <small style="color:var(--muted)">این لیست آزمایشیه کلا برنامه و سایت آزمایشیه</small>
+          </div>
+
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 id="about">تماس سریع</h3>
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="نام شما" required />
+            <input type="email" name="email" placeholder="ایمیل" required />
+            <textarea name="message" rows="5" placeholder="پیام شما"></textarea>
+            <button class="submit">ارسال پیام</button>
+          </form>
+          <div id="phoneBox" class="hidden" style="margin-top:10px;color:#333;font-weight:700;display:none">
+            📞 09100052950
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- درباره من -->
+    <section class="about">
+      <h2>درباره من</h2>
+      <div class="box">
+        <p>من محمد حسین قمی هستم برنامه نویس و هکر قانونمند... اینم لینک کانال آپاراتم: <a href="https://www.aparat.com/Sapphire_599" target="_blank">Aparat / Sapphire_599</a></p>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>آغاز راه</h2>
+      <div class="box">
+        <p>کوین میتنیک، چهره‌ای که زمانی لقب «تحت تعقیب‌ترین هکر جهان» را یدک می‌کشید... (متن شما)</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Sapphire — همهٔ حقوق محفوظ است.
+    </footer>
+  </div>
+
+  <div id="notice" class="notice">پیام شما ارسال شد ✅</div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function showNumber(){
+      document.getElementById("phoneBox").style.display="block";
+    }
+
+    // ارسال فرم (شبیه‌سازی)
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let notice = document.getElementById("notice");
+      notice.style.display = "block";
+      setTimeout(()=> notice.style.display="none", 5000);
+      this.reset();
+    });
+
+    // امکان ذخیره/بارگذاری لیست sapphire در localStorage تا در اپ هم قابل ویرایش باشد
+    (function(){
+      const key = 'sapphire_club_list_v1';
+      const saved = localStorage.getItem(key);
+      if(saved){
+        try{
+          const arr = JSON.parse(saved);
+          const ol = document.getElementById('sapphireList');
+          ol.innerHTML = arr.map((x,i)=>`<li><strong>${x}</strong></li>`).join('');
+        }catch(e){}
+      }
+      // تابعی برای آپدیت لیست از طریق کنسول یا اپ
+      window.updateSapphireList = (arr) => {
+        if(!Array.isArray(arr)) return;
+        localStorage.setItem(key, JSON.stringify(arr));
+        const ol = document.getElementById('sapphireList');
+        ol.innerHTML = arr.map(x=>`<li><strong>${x}</strong></li>`).join('');
+      };
+    })();
+  </script>
+</body>
+</html>
